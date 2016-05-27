@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>SB Admin 2 - Bootstrap Admin Theme</title>
+    <title>ToolStack</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="/template_vendor/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -28,13 +28,13 @@
 
     
     <!-- page specific plugin styles -->
-    <link rel="stylesheet" href="/table_vendor/assets/css/jquery-ui.min.css" />
+    <link rel="stylesheet" href="/bkreport/assets/css/jquery-ui.min.css" />
    
     <!-- text fonts -->
-    <link rel="stylesheet" href="/table_vendor/assets/fonts/fonts.googleapis.com.css" />
+    <link rel="stylesheet" href="/bkreport/assets/fonts/fonts.googleapis.com.css" />
     <!-- ace styles -->
   
-
+    <link rel="stylesheet" href="/css/app.css">
 </head>
 
 <body>
@@ -50,7 +50,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html">SB Admin v2.0</a>
+                <a class="navbar-brand" href="index.html">ToolStack</a>
             </div>
             <!-- /.navbar-header -->
 
@@ -187,7 +187,7 @@
                 <!-- /.dropdown -->
                 <li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                        <i class="fa fa-bell fa-fw"></i>  <i class="fa fa-caret-down"></i>
+                        <i class="fa fa-bell fa-fw activity-indicator"></i>  <i class="fa fa-caret-down"></i>
                     </a>
                     <ul class="dropdown-menu dropdown-alerts">
                         <li>
@@ -271,7 +271,7 @@
                             <!-- /input-group -->
                         </li>
                         <li>
-                            <a href="index.html"><i class="fa fa-home fa-fw"></i> Home</a>
+                            <abkreport"><i class="fa fa-home fa-fw"></i> Home</a>
                         </li>
                         <li>
                             <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Reportes<span class="fa arrow"></span></a>
@@ -576,14 +576,14 @@
     <script src="/template_vendor/dist/js/sb-admin-2.js"></script>
 
 
-    <script src="/table_vendor/assets/js/bootstrap.min.js"></script>
+   
 
     <!-- page specific plugin scripts -->
-    <script src="/table_vendor/assets/js/bootstrap-datepicker.min.js"></script>
-    <script src="/table_vendor/assets/js/jquery.jqGrid.min.js"></script>
-    <script src="/table_vendor/assets/js/idioma.js"></script>
-    <script src="/table_vendor/table.js"></script>
-     <script src="/js/vendor/vue.js"></script>
+    <script src="/bkreport/assets/js/bootstrap-datepicker.min.js"></script>
+    <script src="/bkreport/assets/js/jquery.jqGrid.min.js"></script>
+    <script src="/bkreport/assets/js/idioma.js"></script>
+    <script src="/bkreport/table.js"></script>
+     <script src="/js/vendor/vue/vue.js"></script>
 
 </body>
 

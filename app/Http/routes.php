@@ -1,22 +1,21 @@
 <?php
 
-/*
-|--------------------------------------------------------------------------
-| Application Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register all of the routes for an application.
-| It's a breeze. Simply tell Laravel the URIs it should respond to
-| and give it the controller to call when that URI is requested.
-|
-*/
+
 use App\Http\Request;
 
+
+Route::get('/', function () {
+    return redirect('/home');
+});
 
 
 
 Route::group(['middlewareGroups' => ['web']], function () {
 	Route::auth();
+	/**
+	 * Rutas de reportes de Backups
+	 */
+	Route::get('sala' , 'ChatController@index');
 	Route::get('/home' , 'HomeController@index');
 	Route::get('report/srvmast' , 'SrvmastController@show');
 	Route::post('report/srvmast' , 'SrvmastController@index');
@@ -37,6 +36,11 @@ Route::group(['middlewareGroups' => ['web']], function () {
 	Route::get('report/australia' , 'AustraliaController@show');
 	Route::post('report/australia' , 'AustraliaController@index');
 	Route::post('/report/australia/handler' , 'AustraliaController@handle');
+
+
+	Route::get('report/oracle' , 'OracleController@show');
+	Route::post('report/oracle' , 'OracleController@index');
+	Route::post('/report/oracle/handler' , 'OracleController@handle');
 });
 
 

@@ -6,3 +6,31 @@
   
    
     }
+
+
+/** Activity indicator **/
+.activity-indicator {
+    width: 16px;
+    height: 16px;
+    background: #bf5329;
+    border: 4px solid #fff;
+    border-radius: 15px;
+    position: absolute;
+    right: 13px;
+    transition: all .15s;
+    -webkit-transform: scale(0.85);
+    transform: scale(0.85);
+    padding: 7px;
+    margin-top: -9px;
+
+}
+
+.has-activity-indicator:hover .activity-indicator {
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+}
+
+
+.jqgrid-titlebar{
+	background: #ffd777;
+}
