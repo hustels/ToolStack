@@ -261,7 +261,7 @@
                     <ul class="nav" id="side-menu">
                         <li class="sidebar-search">
                             <div class="input-group custom-search-form">
-                                <input type="text" class="form-control" placeholder="Search...">
+                                <input type="text" class="form-control" placeholder="Buscar...">
                                 <span class="input-group-btn">
                                     <button class="btn btn-default" type="button">
                                         <i class="fa fa-search"></i>
@@ -271,7 +271,7 @@
                             <!-- /input-group -->
                         </li>
                         <li>
-                            <abkreport"><i class="fa fa-home fa-fw"></i> Home</a>
+                            <a href="/home"><i class="fa fa-home fa-fw"></i> Home</a>
                         </li>
                         <li>
                             <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Reportes<span class="fa arrow"></span></a>
@@ -329,7 +329,7 @@
         <div id="page-wrapper">
             <div class="row">
                 <div class="col-lg-12">
-                    <h1 class="page-header">Dashboard</h1>
+                    <h1 class="page-header">Stack Tools</h1>
                 </div>
                 <!-- /.col-lg-12 -->
             </div>
@@ -429,7 +429,7 @@
                 <div class="col-lg-8">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            <i class="fa fa-bar-chart-o fa-fw"></i> Area Chart Example
+                            <i class="fa fa-bar-chart-o fa-fw"></i> Reporte
                           
                         </div>
                         <!-- /.panel-heading -->
@@ -453,7 +453,7 @@
                 <div class="col-lg-4">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            <i class="fa fa-bell fa-fw"></i> Notifications Panel
+                            <i class="fa fa-bell fa-fw"></i> Panel De Notificaciones
                         </div>
                         <!-- /.panel-heading -->
                         <div class="panel-body">
@@ -493,9 +493,8 @@
                     </div>
 
                     <!-- /.panel -->
-                    <div class="chat-panel panel panel-default">
-
-                        <!-- /.panel-heading -->
+                    <!--
+                    <div class="chat-panel panel panel-default"> aqui
                         <div class="panel-body">
                             <ul class="chat">
                                 <li class="left clearfix">
@@ -534,10 +533,10 @@
                                         </p>
                                     </div>
                                 </li>
-                   
+
                             </ul>
                         </div>
-                        <!-- /.panel-body -->
+
                         <div class="panel-footer">
                             <div class="input-group">
                                 <input id="btn-input" type="text" class="form-control input-sm" placeholder="Type your message here..." />
@@ -548,8 +547,8 @@
                                 </span>
                             </div>
                         </div>
-                        <!-- /.panel-footer -->
-                    </div>
+
+                    </div> -->
                     <!-- /.panel .chat-panel -->
                 </div>
                 <!-- /.col-lg-4 -->

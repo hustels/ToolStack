@@ -166,7 +166,7 @@ $(document).ready(function() {
   socket.on("isTyping", function(data) {
     if (data.isTyping) {
       if ($("#"+data.person+"").length === 0) {
-        $("#updates").append("<li id='"+ data.person +"'><span class='text-muted'><small><i class='fa fa-keyboard-o'></i> " + data.person + " is typing.</small></li>");
+        $("#updates").append("<li id='"+ data.person +"'><span class='text-muted'><small><i class='fa fa-keyboard-o'></i> " + data.person + " esta escribiendo.</small></li>");
         timeout = setTimeout(timeoutFunction, 5000);
       }
     } else {
@@ -348,14 +348,14 @@ socket.on("history", function(data) {
   socket.on("update-people", function(data){
     //var peopleOnline = [];
     $("#people").empty();
-    $('#people').append("<li class=\"list-group-item active\">People online <span class=\"badge\">"+data.count+"</span></li>");
+    $('#people').append("<li class=\"list-group-item active\">Personas en linea <span class=\"badge\">"+data.count+"</span></li>");
     $.each(data.people, function(a, obj) {
       if (!("country" in obj)) {
         html = "";
       } else {
         html = "<img class=\"flag flag-"+obj.country+"\"/>";
       }
-      $('#people').append("<li class=\"list-group-item\"><span>" + obj.name + "</span> <i class=\"fa fa-"+obj.device+"\"></i> " + html + " <a href=\"#\" class=\"whisper btn btn-xs\">whisper</a></li>");
+      $('#people').append("<li class=\"list-group-item\"><span>" + obj.name + "</span> <i class=\"fa fa-"+obj.device+"\"></i> " + html + " <a href=\"#\" class=\"whisper btn btn-xs\">Susurrar</a></li>");
       //peopleOnline.push(obj.name);
     });
 
@@ -389,14 +389,14 @@ socket.on("history", function(data) {
 
   socket.on("roomList", function(data) {
     $("#rooms").text("");
-    $("#rooms").append("<li class=\"list-group-item active\">List of rooms <span class=\"badge\">"+data.count+"</span></li>");
+    $("#rooms").append("<li class=\"list-group-item active\">Lista de salas<span class=\"badge\">"+data.count+"</span></li>");
      if (!jQuery.isEmptyObject(data.rooms)) { 
       $.each(data.rooms, function(id, room) {
-        var html = "<button id="+id+" class='joinRoomBtn btn btn-default btn-xs' >Join</button>" + " " + "<button id="+id+" class='removeRoomBtn btn btn-default btn-xs'>Remove</button>";
+        var html = "<button id="+id+" class='joinRoomBtn btn btn-default btn-xs' >Unirse</button>" + " " + "<button id="+id+" class='removeRoomBtn btn btn-default btn-xs'>Borrar</button>";
         $('#rooms').append("<li id="+id+" class=\"list-group-item\"><span>" + room.name + "</span> " + html + "</li>");
       });
     } else {
-      $("#rooms").append("<li class=\"list-group-item\">There are no rooms yet.</li>");
+      $("#rooms").append("<li class=\"list-group-item\">No hay salas disponibles , por favor cree una.</li>");
     }
   });
 
@@ -405,7 +405,7 @@ socket.on("history", function(data) {
   });
 
   socket.on("disconnect", function(){
-    $("#msgs").append("<li><strong><span class='text-warning'>The server is not available</span></strong></li>");
+    $("#msgs").append("<li><strong><span class='text-warning'>El servidor no esta disponible</span></strong></li>");
     $("#msg").attr("disabled", "disabled");
     $("#send").attr("disabled", "disabled");
   });

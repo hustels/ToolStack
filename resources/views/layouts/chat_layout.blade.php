@@ -258,6 +258,7 @@
             <div class="navbar-default sidebar" role="navigation"> 
                 <div class="sidebar-nav navbar-collapse">
                     <ul class="nav" id="side-menu">
+                        <!--
                         <li class="sidebar-search">
                             <div class="input-group custom-search-form">
                                 <input type="text" class="form-control" placeholder="Search...">
@@ -267,8 +268,8 @@
                                     </button>
                                 </span>
                             </div>
-                            <!-- /input-group -->
-                        </li>
+
+                        </li> -->
                         <li>
                             <a href="/"><i class="fa fa-home fa-fw"></i> Home</a>
                         </li>
@@ -291,46 +292,46 @@
  <div class="main col-md-6 col-md-offset-3">
     <div class="alert alert-danger" id="errors"></div>
     <div id="login-screen">
-      <p class="lead">Chat application - using node.js and socket.io</p>
-      <p>Please enter your name below and click 'Join' or hit the 'Enter' key.</p>
+      <p class="lead">Salas De Conversaciones</p>
+      <p>Por favor escriba su nombre y haga click en  'Unirse ' o pulse  Intro.</p>
         <form class="form-inline" id="nameForm">
           <div class="form-group">
-            <input type="text" class="form-control input-lg" placeholder="Your name" id="name">
+            <input type="text" class="form-control input-lg" placeholder="Escribe su nombre" id="name">
           </div>
-          <input type="submit" name="join" id="join" value="Join" class="btn btn-primary btn-lg">
+          <input type="submit" name="join" id="join" value="Unirse" class="btn btn-primary btn-lg">
         </form>
       </div>
     </div>
 
     <div class="row" id="main-chat-screen">
-      <div class="col-md-3">
+      <div class="col-md-4">
         <ul id="rooms" class="list-group"></ul>
         <ul id="people" class="list-group"></ul>
       </div>
-      <div class="col-md-6">
+      <div class="col-md-8" >
         <div id="conversation">
           <ul id="msgs" class="list-unstyled"></ul>
         </div>
         <form id="chatForm" class="form-inline">
           <div class="form-group">
-            <input type="text" class="form-control input-lg" placeholder="Your message" id="msg">
+            <input type="text" class="form-control input-lg" placeholder="Escribe su mensaje" id="msg" style="width: 380px">
           </div>
-          <input type="submit" name="send" id="send" value="Send" class="btn btn-success btn-lg">
-          <input type="button" name="start_button" id="start_button" value="Record" onclick="startButton(event)" class="btn btn-info btn-lg">
+          <input type="submit" name="send" id="send" value="Enviar" class="btn btn-success btn-lg">
+          <!--<input type="button" name="start_button" id="start_button" value="Record" onclick="startButton(event)" class="btn btn-info btn-lg"> -->
           <div class="btn-group">
             <button type="button" class="btn btn-lg btn-info dropdown-toggle" data-toggle="dropdown" >
-              Actions <span class="caret"></span>
+              Acciones<span class="caret"></span>
             </button>
             <ul class="dropdown-menu" role="menu">
-              <li><a href="#" name="createRoom" data-toggle="modal" data-target="#roomModal">Create room</a></li>
-              <li><a href="#" name="leave" id="leave">Leave current room</a></li>
+              <li><a href="#" name="createRoom" data-toggle="modal" data-target="#roomModal">Crear Sala</a></li>
+              <li><a href="#" name="leave" id="leave">Abandonar Sala</a></li>
               <!--<li><a href="#" name="disconnect" id="disconnect">Disconnect from chat</a></li>-->
             </ul>
           </div>
         </form>
       </div>
-       <div class="col-md-2">
-        <ul class="list-unstyled" id="updates"></ul>
+       <div class="col-md-3">
+        <ul class="list-unstyled" id="updates" ></ul>
       </div>
     </div>
   </div>
@@ -341,15 +342,16 @@
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-          <h4 class="modal-title" id="createRoomLabel">Create room</h4>
+          <h4 class="modal-title" id="createRoomLabel">Crear Sala</h4>
         </div>
         <div class="modal-body">
-          You can create a chat room here. Names have to be unique.
-          <form class="form-inline" id="createRoomForm"><input type="text" class="form-control input-lg"  placeholder="Room name" id="createRoomName"></form>
+          Puedes crear una sala de conversaciòn. Los nombres deben ser únicos.
+            <br>
+          <form class="form-inline" id="createRoomForm"><input type="text" class="form-control input-lg"  placeholder="Nombre de Sala" id="createRoomName"></form>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-lg btn-default" data-dismiss="modal">Close</button>
-          <button data-dismiss="modal" id="createRoomBtn" class="btn btn-success btn-lg">Create room</button>
+          <button type="button" class="btn btn-lg btn-default" data-dismiss="modal">Cerrar</button>
+          <button data-dismiss="modal" id="createRoomBtn" class="btn btn-success btn-lg">Crear Sala</button>
         </div>
       </div>
     </div>
