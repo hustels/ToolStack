@@ -10,8 +10,8 @@
 
 /** Activity indicator **/
 .activity-indicator {
-    width: 16px;
-    height: 16px;
+    width: 2px;
+    height: 3px;
     background: #bf5329;
     border: 4px solid #fff;
     border-radius: 15px;
@@ -20,7 +20,7 @@
     transition: all .15s;
     -webkit-transform: scale(0.85);
     transform: scale(0.85);
-    padding: 7px;
+    padding: 6px;
     margin-top: -9px;
 
 }
