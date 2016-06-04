@@ -15,7 +15,7 @@ Route::group(['middlewareGroups' => ['web']], function () {
 	/**
 	 * Rutas de reportes de Backups
 	 */
-	Route::get('sala' , 'ChatController@index');
+	Route::get('dti/salas' , 'ChatController@index');
 	Route::get('/home' , 'HomeController@index');
 	Route::get('report/srvmast' , 'SrvmastController@show');
 	Route::post('report/srvmast' , 'SrvmastController@index');
@@ -41,6 +41,13 @@ Route::group(['middlewareGroups' => ['web']], function () {
 	Route::get('report/oracle' , 'OracleController@show');
 	Route::post('report/oracle' , 'OracleController@index');
 	Route::post('/report/oracle/handler' , 'OracleController@handle');
+
+
+	// app routes
+	Route::get('comments' , 'CommentController@index');
+	Route::post('comments/remove' , 'CommentController@remove');
+	Route::post('comments/add' , 'CommentController@add');
+	Route::get('comments/all' , 'CommentController@all');
 });
 
 
