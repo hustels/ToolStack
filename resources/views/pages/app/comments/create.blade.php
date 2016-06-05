@@ -68,5 +68,6 @@
 </div>
 @endsection
 @section('scripts')
+
 <script src="app/comment.js"></script>
 @endsection

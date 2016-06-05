@@ -7,6 +7,29 @@ var express = require('express')
 , Room = require('./room.js')
 , _ = require('underscore')._;
 
+/** Notifications configure **/
+var Redis = require('ioredis');
+var redis = new Redis();
+
+redis.subscribe(['comment-was-created' ], function(err, count) {
+
+});
+redis.on('message', function(channel, message) {
+
+   console.log('Comment was added: ' + message);
+   message = JSON.parse(message);
+   //io.emit(channel + ':' + message.event, message.data);
+   // uso  io.sockets.once en vez io.sockets.on para evitar el error
+   // replace .on() with once(). using once() removes event listeners when the event is handled by the same function. source: http://nodeguide.com/beginner.html#using-eventemitters
+   io.sockets.once("connection" , function(socket){
+	socket.emit("comment-was-created", message.data);
+	});
+   
+});
+/**** End configure notifications ***/
+
+
+
 app.configure(function() {
 	app.set('port', process.env.OPENSHIFT_NODEJS_PORT || 3000);
   	app.set('ipaddr', process.env.OPENSHIFT_NODEJS_IP || "192.168.0.154");
@@ -21,7 +44,7 @@ app.configure(function() {
 
 	/* Store process-id (as priviledged user) */
 	try {
-	    npid.create('/var/run/advanced-chat.pid', true);
+	    npid.create('/var/run/chat.pid', true);
 	} catch (err) {
 	    console.log(err);
 	    //process.exit(1);

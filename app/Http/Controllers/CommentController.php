@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 use App\Comment;
 use Illuminate\Http\Request;
-
+use App\Events\CommentWasCreated;
 use App\Http\Requests;
 
 class CommentController extends Controller
@@ -15,6 +15,8 @@ class CommentController extends Controller
     } 
     public function index()
     {
+        $data = 'Se ha creado un nuevo comentario';
+        event (new CommentWasCreated($data));
     	return view('pages.app.comments.create');
     }
     public function add(Request $request)
@@ -32,9 +34,12 @@ class CommentController extends Controller
     	$comment->owner = \Auth::user()->email;
     	if($comment->save())
     	{
+            $data = 'Se ha creado un nuevo comentario';
     		\Session::flash('created', 'Añadido correctamente!');
     		//return 'Created successfuly';
+            event (new CommentWasCreated($data));
     		return redirect()->back();
+
     		
 
     	}

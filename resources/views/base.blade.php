@@ -186,7 +186,7 @@
                     <!-- /.dropdown-tasks -->
                 </li>
                 <!-- /.dropdown -->
-                <li class="dropdown">
+                <li class="dropdown" id="notifications">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">
                         <i class="fa fa-bell fa-fw "></i>  <i class="fa fa-caret-down"></i>
                     </a>
@@ -194,7 +194,7 @@
                         <li>
                             <a href="#">
                                 <div>
-                                    <i class="fa fa-comment fa-fw"></i> Nuevo comentario
+                                    <i class="fa fa-comment fa-fw"></i> Nuevo comentario @{{name}}
                                     <span class="pull-right text-muted small">Hace 3 minutos</span>
                                 </div>
                             </a>
@@ -359,6 +359,10 @@
     <script src="/bkreport/assets/js/idioma.js"></script>
     <script src="/bkreport/table.js"></script>
      <script src="/js/vendor/vue/vue.js"></script>
+     <script src="/chat/socket.io.js"></script>
+     <script src="/js/bootstrap-notify.js"></script>
+     <script src="/app/app.js"></script>
+
  @yield('scripts')
 </body>
 
