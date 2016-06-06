@@ -17,6 +17,7 @@ class CreateCommentsTable extends Migration
             $table->string('title');
             $table->text('description');
             $table->string('owner');
+            $table->boolean('isread');
             $table->timestamps();
         });
     }

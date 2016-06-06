@@ -5,6 +5,7 @@ use App\Comment;
 use Illuminate\Http\Request;
 use App\Events\CommentWasCreated;
 use App\Http\Requests;
+\Carbon\Carbon::setLocale('es');
 
 class CommentController extends Controller
 {
@@ -15,9 +16,10 @@ class CommentController extends Controller
     } 
     public function index()
     {
-        $data = 'Se ha creado un nuevo comentario';
-        event (new CommentWasCreated($data));
-    	return view('pages.app.comments.create');
+        //$data = 'Se ha creado un nuevo comentario';
+        //event (new CommentWasCreated($data));
+        $comments = Comment::all();
+    	return view('pages.app.comments.create' , compact('comments'));
     }
     public function add(Request $request)
     {
@@ -59,7 +61,27 @@ class CommentController extends Controller
     // Get all comments for the view
     public function all()
     {
-        return Comment::all();
+
+        $users = \DB::table('comments')
+                ->orderBy('updated_at', 'desc')
+                ->get();
+        return $users;
+    }
+
+    // Get unread comments
+    public function unread()
+    {
+        return \DB::table('comments')->where('isread' , false)->count();
+    }
+    // Mark a comment as read
+    public function read(Request $request)
+    {
+        $comment = Comment::find($request->input('id'));
+        $comment->isread = true;
+        if($comment->save())
+        {
+            return 'The comment was read';
+        }
     }
 
 

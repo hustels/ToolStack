@@ -43,11 +43,13 @@ Route::group(['middlewareGroups' => ['web']], function () {
 	Route::post('/report/oracle/handler' , 'OracleController@handle');
 
 
-	// app routes
+	// commments  routes
 	Route::get('comments' , 'CommentController@index');
 	Route::post('comments/remove' , 'CommentController@remove');
 	Route::post('comments/add' , 'CommentController@add');
 	Route::get('comments/all' , 'CommentController@all');
+	Route::get('comments/unread' , 'CommentController@unread');
+	Route::post('comments/markasread' , 'CommentController@read');
 });
 
 

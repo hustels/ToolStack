@@ -7,7 +7,7 @@
                 <!-- /.col-lg-12 -->
             </div>
             <!-- /.row -->
-            <div class="row">
+            <div class="row" id="comments">
                 <div class="col-lg-6 col-md-6">
                     <div class="panel panel-primary">
                         <div class="panel-heading">
@@ -16,7 +16,7 @@
                                     <i class="fa fa-comments fa-5x"></i>
                                 </div>
                                 <div class="col-xs-9 text-right">
-                                    <div class="huge">26</div>
+                                    <div class="huge">@{{unreadComments}}</div>
                                     <div>Nuevos comentarios!</div>
                                 </div>
                             </div>
@@ -227,4 +227,8 @@
                 <!-- /.col-lg-4 -->
             </div>
             <!-- /.row -->
+@endsection
+@section('scripts')
+
+<script src="app/home.js"></script>
 @endsection

@@ -5,7 +5,8 @@ vm = new Vue({
 		description: '',
 		PageTitle: 'Lista de comentarios',
 		comments: [],
-		search: ''
+		search: '',
+		comment_id: ''
 	},
 	ready: function()
 	{
@@ -21,7 +22,7 @@ vm = new Vue({
 		add:  function(e)
 		{
 			//e.preventDefault();
-			$.ajax({
+			/*$.ajax({
 			  type: "POST",
 			  url: '/comments/add',
 			  data: {title:  this.title , description: this.description},
@@ -29,7 +30,7 @@ vm = new Vue({
 			  
 
 			  }
-			});
+			});*/
 			
 			
 		},
@@ -45,7 +46,11 @@ vm = new Vue({
 		{
 			$.get( "comments/all", function( data ) {
 			vm.comments = data;
-			  //console.log(data);
+			  for (var i = 0; i <= vm.comments.length; i++) {
+			vm.comments[i].created_at = moment(vm.comments[i].created_at).locale('es').fromNow();
+			  	console.log(moment(vm.comments[i].created_at).locale('es').fromNow());
+			  }
+
 			});
 		},
 		RemoveComment: function(id)
@@ -60,6 +65,26 @@ vm = new Vue({
 			  	vm.GetComments();
 			  }
 			});
+		},
+		// Mark a comment as read
+		markAsRead:  function(id)
+		{
+			this.comment_id = id;
+			//return false;
+
+			$.ajax({
+			  type: "POST",
+			  url: '/comments/markasread',
+			  data: {id:  id},
+			  success: function(response){
+			  return false;
+			  	//console.log(response);
+			  	vm.GetComments();
+			  }
+			});
+			console.log('Va iunt');
+
+
 		}
 	}
 })

@@ -1,8 +1,8 @@
  var socket = io.connect('http://192.168.0.154:3000');
-new Vue({
+var vm = new Vue({
 	el: '#notifications',
 	data:{
-		name: 'Jhoe doe'
+		name: 'Jhoe doe',
 	},
 	ready:  function()
 	{
@@ -10,6 +10,7 @@ new Vue({
 
 	},
 	methods: {
+		// Notificar cuando se añada un cometario
 		GetNotifications:  function()
 		{
 			

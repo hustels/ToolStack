@@ -361,9 +361,14 @@
      <script src="/js/vendor/vue/vue.js"></script>
      <script src="/chat/socket.io.js"></script>
      <script src="/js/bootstrap-notify.js"></script>
+     <script src="/js/moment-with-locales.js"></script>
+     <script src="/js/jquery-ui.min.js"></script>
      <script src="/app/app.js"></script>
+    <script type="text/javascript" src="/css/semantic/semantic.js""></script>
+    
 
  @yield('scripts')
+
 </body>
 
 </html>

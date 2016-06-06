@@ -41,33 +41,47 @@
 		  </div>
 		  <button type="submit" class="btn btn-primary" >Añadir</button>
 		</form>
-		<!-- Display list of comments-->
+		<!-- Search commments-->
 		<div class="ui search">
 		  <div class="ui icon input">
 		    <input class="prompt" type="text" v-model="search" placeholder="Buscar...">
 		    <i class="search icon"></i>
 		  </div>
 		  <div class="results"></div>
-		</div>
-		<div class="ui celled list" v-for="comment in comments | filterBy search ">
-		  <div class="item">
-		  	    <div class="right floated content">
-      				<div class="ui red button" @click="RemoveComment(comment.id)">Borrar</div>
-    			</div>
-		   <!-- <img class="ui avatar image" src="#"> -->
-		    <div class="content">
-		      <div class="header">@{{comment.title}}</div>
-		      @{{comment.description}}
-		    </div>
-		  </div>
+		</div><br>
+	<!-- Display list of comments-->
+	<div class="ui styled accordion" >
+		<div v-for="comment in comments | filterBy search " >
+		<div class="title">
+	    <i class="dropdown icon" @click="markAsRead(comment.id)"></i>
+	    @{{comment.title}} <i style="font-size: 11px">@{{comment.created_at}}</i>
+	  	</div>
+	  		<div class="content">
+	  		<p>@{{comment.description}}</p>
+	  		<div class="ui red button" @click="RemoveComment(comment.id)">Borrar</div>
+	  		</div>
+
 		</div>
 
+		</div>
 
-	</div>
 </div>
+<ul>
+	
+</ul>
 </div>
 @endsection
 @section('scripts')
 
 <script src="app/comment.js"></script>
+ <script type="text/javascript">
+$('.ui.accordion').accordion('refresh');
+
+/*$('.ui.accordion')
+  .accordion({
+    selector: {
+      trigger: '.title .icon',
+    }
+  });*/
+</script>
 @endsection
