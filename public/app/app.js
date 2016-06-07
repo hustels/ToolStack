@@ -6,7 +6,7 @@ var vm = new Vue({
 	},
 	ready:  function()
 	{
-		this.GetNotifications();
+		//this.GetNotifications();
 
 	},
 	methods: {
@@ -16,9 +16,8 @@ var vm = new Vue({
 			
 			
 		    socket.on("comment-was-created", function(message){
-		    	var counter = 0;
-		        counter = counter +1;
-		         console.log(counter);
+		    	
+		         console.log(message);
 		         //alert(message);
 		         $(document).ready(function(){
 		         	$.notify({

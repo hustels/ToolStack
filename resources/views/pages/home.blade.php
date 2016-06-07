@@ -1,5 +1,6 @@
 @extends('base')
 @section('content')
+<div id="comments">
             <div class="row">
                 <div class="col-lg-12">
                     <h1 class="page-header">Stack Tools</h1>
@@ -7,7 +8,7 @@
                 <!-- /.col-lg-12 -->
             </div>
             <!-- /.row -->
-            <div class="row" id="comments">
+            <div class="row" >
                 <div class="col-lg-6 col-md-6">
                     <div class="panel panel-primary">
                         <div class="panel-heading">
@@ -123,16 +124,16 @@
                     <!-- /.panel -->
                 </div>
                 <!-- /.col-lg-8 -->
-                <div class="col-lg-4">
+                <div class="col-lg-4" >
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            <i class="fa fa-bell fa-fw"></i> Panel De Notificaciones
+                            <i class="fa fa-bell fa-fw"></i> Panel De Notificaciones @{{name}}
                         </div>
                         <!-- /.panel-heading -->
                         <div class="panel-body">
                             <div class="list-group">
-                                <a href="#" class="list-group-item">
-                                    <i class="fa fa-comment fa-fw"></i> Nuevo comentario
+                                <a href="#" class="list-group-item" v-for="n in newNotifications">
+                                    <i class="fa fa-comment fa-fw"></i> @{{n.type}}
                                     <span class="pull-right text-muted small"><em>hace 4 minutos</em>
                                     </span>
                                 </a>
@@ -141,7 +142,7 @@
                                     <span class="pull-right text-muted small"><em>hace 20 minutos</em>
                                     </span>
                                 </a> -->
-                                <a href="#" class="list-group-item">
+                               <!-- <a href="#" class="list-group-item">
                                     <i class="fa fa-tasks fa-fw"></i> Nueva tarea
                                     <span class="pull-right text-muted small"><em>hace 32 minutos</em>
                                     </span>
@@ -157,7 +158,7 @@
                                     </span>
                                 </a>
 
-                               
+                               -->
                             </div>
                             <!-- /.list-group -->
                             <a href="#" class="btn btn-default btn-block">Todas las notificaciones</a>
@@ -227,6 +228,7 @@
                 <!-- /.col-lg-4 -->
             </div>
             <!-- /.row -->
+</div>
 @endsection
 @section('scripts')
 

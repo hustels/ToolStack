@@ -41,6 +41,7 @@
 		  </div>
 		  <button type="submit" class="btn btn-primary" >Añadir</button>
 		</form>
+		<hr>
 		<!-- Search commments-->
 		<div class="ui search">
 		  <div class="ui icon input">
@@ -54,7 +55,7 @@
 		<div v-for="comment in comments | filterBy search " >
 		<div class="title">
 	    <i class="dropdown icon" @click="markAsRead(comment.id)"></i>
-	    @{{comment.title}} <i style="font-size: 11px">@{{comment.created_at}}</i>
+	    @{{comment.title}} <i style="font-size: 12px"> Creado por @{{comment.owner }}@{{comment.created_at}}</i>
 	  	</div>
 	  		<div class="content">
 	  		<p>@{{comment.description}}</p>
@@ -73,7 +74,7 @@
 @endsection
 @section('scripts')
 
-<script src="app/comment.js"></script>
+<script src="/app/comment.js"></script>
  <script type="text/javascript">
 $('.ui.accordion').accordion('refresh');
 

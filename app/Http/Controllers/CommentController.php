@@ -16,8 +16,8 @@ class CommentController extends Controller
     } 
     public function index()
     {
-        //$data = 'Se ha creado un nuevo comentario';
-        //event (new CommentWasCreated($data));
+        $data = ['type' => 'notification' , 'text' => 'Ha llegado un nuevo comentario' ];
+        event (new CommentWasCreated($data));
         $comments = Comment::all();
     	return view('pages.app.comments.create' , compact('comments'));
     }
@@ -33,7 +33,7 @@ class CommentController extends Controller
     	$comment = new Comment;
     	$comment->title = $request->input('title');
     	$comment->description = $request->input('description');
-    	$comment->owner = \Auth::user()->email;
+    	$comment->owner = \Auth::user()->name;
     	if($comment->save())
     	{
             $data = 'Se ha creado un nuevo comentario';
@@ -63,7 +63,7 @@ class CommentController extends Controller
     {
 
         $users = \DB::table('comments')
-                ->orderBy('updated_at', 'desc')
+                ->orderBy('created_at', 'desc')
                 ->get();
         return $users;
     }

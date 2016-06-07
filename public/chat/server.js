@@ -22,7 +22,8 @@ redis.on('message', function(channel, message) {
    // uso  io.sockets.once en vez io.sockets.on para evitar el error
    // replace .on() with once(). using once() removes event listeners when the event is handled by the same function. source: http://nodeguide.com/beginner.html#using-eventemitters
    io.sockets.once("connection" , function(socket){
-	socket.emit("comment-was-created", message.data);
+	//socket.emit("comment-was-created", message.data);
+	socket.broadcast.emit("comment-was-created", message.data);
 	});
    
 });

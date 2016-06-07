@@ -423,7 +423,7 @@ function drawTable(data){
 }
 
 
-
+/*
 $(document).ready(function(){
 	$.post('test' , function(data){
 		//console.log(data);
@@ -431,7 +431,7 @@ $(document).ready(function(){
 		drawTable(data);
 
 	})
-})
+})*/
 
 
 

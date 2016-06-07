@@ -48,7 +48,7 @@ vm = new Vue({
 			vm.comments = data;
 			  for (var i = 0; i <= vm.comments.length; i++) {
 			vm.comments[i].created_at = moment(vm.comments[i].created_at).locale('es').fromNow();
-			  	console.log(moment(vm.comments[i].created_at).locale('es').fromNow());
+			  	//console.log(moment(vm.comments[i].created_at).locale('es').fromNow());
 			  }
 
 			});
